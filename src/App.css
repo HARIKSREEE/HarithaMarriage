@@ -20,7 +20,7 @@ main {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0;
 }
 
 .marriage-bg {
@@ -65,7 +65,7 @@ main {
 
 .std-content {
   position: absolute;
-  top: 60%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -110,7 +110,7 @@ main {
 
 @keyframes firstText {
   0% {
-    top: 100%;
+    bottom: 0;
     opacity: 0;
     visibility: hidden;
   }
@@ -118,7 +118,7 @@ main {
     opacity: 0.5;
   }
   100% {
-    top: 70%;
+    bottom: 15%;
     opacity: 1;
     visibility: visible;
   }
@@ -136,5 +136,39 @@ main {
   100% {
     text-shadow: 4px 4px 4px rgb(223, 170, 24);
     transform: scale(1.05);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .names {
+    flex-direction: column;
+    align-items: center;
+  }
+  .names * {
+    margin: 0;
+  }
+
+  .std-label {
+    margin-top: 20px;
+  }
+
+  .std-content {
+    bottom: 15%;
+  }
+
+  @keyframes firstText {
+    0% {
+      bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      bottom: 25%;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

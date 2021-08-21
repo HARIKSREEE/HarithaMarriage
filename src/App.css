@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  overflow: hidden;
+
+  font-family: "Tangerine", serif;
+  font-size: 48px;
+  text-shadow: 4px 4px 4px rgb(230, 227, 203);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+.marriage-bg {
+  background-size: cover;
+  scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+}
+.first {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      transparent,
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/AKHI5685_opt.jpg");
+  background-position: 50% 50%;
+}
+
+.txt-first {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(48px, 5vw, 100px);
+  color: azure;
+  opacity: 0;
+  animation: firstText 2s ease-in-out forwards;
+}
+
+.second {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      transparent,
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/AKHI5917_opt.jpg");
+  background-position: 58% 50%;
+}
+
+.std-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.names {
+  color: rgb(232, 252, 145);
+  font-size: clamp(48px, 5vw, 100px);
+  font-weight: bold;
+  text-shadow: 0px 0px 4px rgb(223 170 24), 0px 0px 8px rgb(255 254 254),
+    0px 0px 12px rgb(234 16 159), 0px 0px 16px rgb(236 13 13);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.names * {
+  margin: 0 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.std-label {
+  font-size: clamp(32px, 4vw, 100px);
+  color: rgb(248, 248, 247);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.date {
+  font-size: clamp(42px, 4vw, 100px);
+  color: rgb(248, 248, 247);
+  font-weight: bold;
+  animation: dateHighlight 2s ease-in-out infinite;
+}
+
+@media only screen and (max-width: 600px) {
+  .names {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .names * {
+    margin: 0;
+  }
+
+  .std-label {
+    margin-top: 20px;
+  }
+}
+
+@keyframes firstText {
+  0% {
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 70%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes dateHighlight {
+  0% {
+    text-shadow: 4px 4px 4px rgb(223, 170, 24);
+    transform: scale(1.05);
+  }
+  50% {
+    text-shadow: none;
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 4px 4px 4px rgb(223, 170, 24);
+    transform: scale(1.05);
   }
 }

@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <div class="marriage-bg first">
+        <p class="txt-first">They are ready to tie the knot!</p>
+      </div>
+      <div class="marriage-bg second">
+        <div class="std-content">
+          <p class="names">
+            <span>Haritha</span>
+            <span> &</span> <span>Abhijith</span>
+          </p>
+          <p class="std-label">Save the date!</p>
+          <p class="date">
+            September 9<sup>th</sup>
+          </p>
+        </div>
+      </div>
+    </main>
   );
 }
 
